@@ -57,7 +57,41 @@ $(document).ready(function(){
 
     // Registrar Personal
 
-    $("#").click(function(){
+    $("#btnRegistrar").click(function(){
+
+        var nombre =  $("#txtNombre").val();
+        var apellido = $("#txtApellido").val();
+        var direccion = $("#txtDireccion").val();
+        var generoM =  $("#txtMasculino").val();
+        var generoF = $("#txtFemenino").val();
+        var respuesta =  $("#txtRespuesta").val();
+
+
+        var objData = new FormData();
+        objData.append("nombre",nombre);
+        objData.append("apellido",apellido);
+        objData.append("direccion",direccion);
+        objData.append("generoM",generoM);
+        objData.append("generoF",generoF);
+        objData.append("respuesta",respuesta);
+
+        $.ajax({
+
+            url: "control/personalControl.php",
+            type: "post",
+            dataType: "json",
+            data: objListaPersonal,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(respuesta){
+
+                alert("se registro buen trabajo");
+
+            }
+
+        })
+
 
 
 
