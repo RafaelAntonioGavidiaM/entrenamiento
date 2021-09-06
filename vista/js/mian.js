@@ -10,7 +10,7 @@ $(document).ready(function(){
     }
 
     // listar Tabla personal
-    
+
     function listarPersonal(){
 
         var listaPersonal = "ok";
@@ -28,22 +28,21 @@ $(document).ready(function(){
             processData: false,
             success: function(respuesta){
 
-                var interface = "";
+                var dataPersonal = [];
 
-                respuesta.forEach(item, index){
+                respuesta.forEach(cargarPersonal)
 
-                    interface += '<tr>';
-                    interface += '<td>' + item.nombre + '<td>';
-                    interface += '<td>' + item.apellido + '<td>';
-                    interface += '<td>' + item.direccion + '<td>';
-                    interface += '<td>' + item.idGenero + '<td>';
-                    interface += '<td>' + item.idRespuesta + '<td>';
-                    interface += '<td>';
-                
+                function cargarPersonal(item, index){
+
+                    var objBotones = '<button type="button" class="btn btn-warning" title="Editar"  id="btnEditarArea" idArea="' + item.idArea + '" nombreArea="' + item.nombreArea + '" data-toggle="modal" data-target="#modalModArea"><span class="glyphicon glyphicon-pencil"></span></button>'
+                    objBotones += '<button type="button" class="btn btn-danger" title ="Eliminar" id="btnEliminarArea" idArea="' + item.idArea + '"><span class="glyphicon glyphicon-remove"></span></button>';
+
+
+                    dataPersonal.push([item.nombre,item.apellido,item.direccion,item.idGenero,item.idRespuesta,objBotones]);
 
                 }
 
-
+                
 
             } 
 
