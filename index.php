@@ -23,8 +23,8 @@
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='vista/css/main.css'>
+    <script src='vista/js/mian.js'></script>
 </head>
 
 <body>
@@ -32,11 +32,48 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Entrenamiento</h1>
-        </div class="col-sm-6">
-    </div>
+            <p>Web SIIGO</p>
+        </div>
+
+        <div class="col-sm-5">
+
+            <input type="text" id="txtNombre" placeholder="Nombre">
+            <br>
+            <input type="text" id="txtApellido" placeholder="Apellido">
+            <br>
+            <input type="text" id="txtDireccion" placeholder="Direccion">
+            <br>
+            <h2>Genero:</h2>
+            <input type="radio" id="txtMasculino">
+            <label for="txtGenero">M</label>
+            <input type="radio" id="txtFemenino">
+            <label for="txtGenero">F</label>
+            <br>
+            <input type="text" id="txtDeporte" placeholder="Deporte favorito">
+            <br>
+            <input type="text" id="txtPelicula" placeholder="Pelicula favorita">
+
+            <button id="btnRegistrar">Registrar</button>
+            
+        </div>
+        <div class="col-sm-7">
+            <table class="table table-bordered">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Genero</th>
+                    <th>Respuesta</th>
+                    <th>Accion</th>
+                </thead>
+                <tbody id="cuerpoTabla">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    </div>
+
 
 </body>
 
