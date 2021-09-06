@@ -1,5 +1,6 @@
 $(document).ready(function(){
-
+    // inicio de metodos
+    listarPersonal();
     // limipar Campos 
 
     function limpiarCampos(){
@@ -34,14 +35,43 @@ $(document).ready(function(){
 
                 function cargarPersonal(item, index){
 
-                    var objBotones = '<button type="button" class="btn btn-warning" title="Editar"  id="btnEditarArea" idArea="' + item.idArea + '" nombreArea="' + item.nombreArea + '" data-toggle="modal" data-target="#modalModArea"><span class="glyphicon glyphicon-pencil"></span></button>'
-                    objBotones += '<button type="button" class="btn btn-danger" title ="Eliminar" id="btnEliminarArea" idArea="' + item.idArea + '"><span class="glyphicon glyphicon-remove"></span></button>';
+                    var objBotones = '<button type="button" class="btn btn-warning" title="Editar"  id="btnEditarPersonal" idPersonal="' + item.idPersonal + '" nombre="' + item.nombre + '" apellido="' + item.apellido + '" direccion="' + item.direccion + '" idGenero="' + item.idGenero + '" idRespuesta="' + item.idRespuesta + '" data-toggle="modal" data-target="#modalModPersonal"><span class="glyphicon glyphicon-pencil"></span></button>'
+                    objBotones += '<button type="button" class="btn btn-danger" title ="Eliminar" id="btnEliminarPersonal" idPersonal="' + item.idPersonal + '"><span class="glyphicon glyphicon-remove"></span></button>';
 
 
                     dataPersonal.push([item.nombre,item.apellido,item.direccion,item.idGenero,item.idRespuesta,objBotones]);
 
                 }
 
+                
+                $('#tablaPersonal').DataTable({
+                    data: dataPersonal,
+
+                    language: {
+                        "decimal": "",
+                        "emptyTable": "No data available in table",
+                        "info": "Showing _START_ to _END_ of _TOTAL_ entries",
+                        "infoEmpty": "Showing 0 to 0 of 0 entries",
+                        "infoFiltered": "(filtered from _MAX_ total entries)",
+                        "infoPostFix": "",
+                        "thousands": ",",
+                        "lengthMenu": "Show _MENU_ entries",
+                        "loadingRecords": "Loading...",
+                        "processing": "Processing...",
+                        "search": "Buscar:",
+                        "zeroRecords": "No se encuentro registros con el criterio de busqueda",
+                        "paginate": {
+                            "first": "Primero",
+                            "last": "Ultimo",
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        },
+                        "aria": {
+                            "sortAscending": ": activate to sort column ascending",
+                            "sortDescending": ": activate to sort column descending"
+                        }
+                    }
+                });
                 
 
             } 
@@ -104,7 +134,7 @@ $(document).ready(function(){
     // Modificar Personal
 
 
-    $("#").on("click", "#", function(){
+    $("#tablaPersonal").on("click", "#", function(){
 
 
 
