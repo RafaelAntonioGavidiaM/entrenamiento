@@ -85,15 +85,39 @@ $(document).ready(function(){
 
     }
 
+    
     // Registrar Personal
+
+    $("input[name=radio]").click(function(){
+
+        var genero = $('input:radio[name=radio].checked').val();
+        var pregunta =  "";
+
+        if(genero = "Masculino"){
+
+            pregunta = "¿Que deporte es tu favorito?";s
+
+        }else{
+
+            pregunta = "¿Que pelicula es tu favarita?";
+
+
+        }
+        
+        $("#").html(Pregunta);
+        
+
+
+
+
+    })
 
     $("#btnRegistrar").click(function(){
 
         var nombre =  $("#txtNombre").val();
         var apellido = $("#txtApellido").val();
         var direccion = $("#txtDireccion").val();
-        var generoM =  $("#txtMasculino").val();
-        var generoF = $("#txtFemenino").val();
+        var genero = $('input:radio[name=radio].checked').val();
         var respuesta =  $("#txtRespuesta").val();
 
 
@@ -101,8 +125,7 @@ $(document).ready(function(){
         objData.append("nombre",nombre);
         objData.append("apellido",apellido);
         objData.append("direccion",direccion);
-        objData.append("generoM",generoM);
-        objData.append("generoF",generoF);
+        objData.append("genero",genero);
         objData.append("respuesta",respuesta);
 
         $.ajax({
@@ -134,7 +157,7 @@ $(document).ready(function(){
     // Modificar Personal
 
 
-    $("#tablaPersonal").on("click", "#", function(){
+    $("#tablaPersonal").on("click", "#btnEditarPersonal", function(){
 
 
 
