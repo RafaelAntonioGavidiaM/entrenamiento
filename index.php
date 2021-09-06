@@ -44,9 +44,9 @@
             <input type="text" id="txtDireccion" placeholder="Direccion">
             <br>
             <h2>Genero:</h2>
-            <input type="radio" id="txtMasculino">
+            <input type="radio" name="r" id="txtMasculino">
             <label for="txtGenero">M</label>
-            <input type="radio" id="txtFemenino">
+            <input type="radio" name="r" id="txtFemenino">
             <label for="txtGenero">F</label>
             <br>
             <input type="text" id="txtDeporte" placeholder="Deporte favorito">

@@ -1,4 +1,4 @@
-creare table personal(
+create table personal(
 idPersonal int not null auto_increment,
 nombre varchar(30),
 apellido varchar(30),
@@ -20,5 +20,5 @@ idPersonal int,
 respuesta varchar(50),
 primary key(idRespuesta));
 
-alter table respuesta add foreign key idPersonal references personal(idPersonal);
-alter table personal add foreign key idGenero references genero(idGenero);
+alter table respuesta add foreign key (idPersonal) references personal(idPersonal);
+alter table personal add foreign key (idGenero) references genero(idGenero);
